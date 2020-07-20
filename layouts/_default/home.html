@@ -1,0 +1,30 @@
+{{ define "main" }}
+    <h1 id="{{ .Site.Title | urlize }}" class="page-title">{{.Title}}</h1>
+    {{ .Content }}
+    {{ range .Site.Sections }}
+        <h1 id="{{ .Title | urlize }}">{{ .Title }}</h1>
+        {{ .Content }}
+        {{ range .Pages }}
+            <h2 id="{{ .Title | urlize }}">{{ .Title }}</h2>
+            {{ .Content }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ define "toc" }}
+    <ul id="toc" class="toc-list-h1">
+        <li>
+            <a href="#{{ .Site.Title | urlize }}" class="toc-h1 toc-link" data-title="{{ .Site.Title }}">{{ .Site.Title }}</a>
+        </li>
+        {{ range .Site.Sections }}
+            <li>
+                <a href="#{{ .Title | urlize }}" class="toc-h1 toc-link" data-title="{{ .Title }}">{{ .Title }}</a>
+                <ul class="toc-list-h2">
+                    {{ range .Pages }}
+                        <a href="#{{ .Title | urlize }}" class="toc-h2 toc-link" data-title="{{ .Title }}">{{ .Title }}</a>
+                    {{end}}
+                </ul>
+            </li>
+        {{end}}
+    </ul>
+{{ end }}
