@@ -1,0 +1,20 @@
+image: dettmering/hugo-build:latest
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+test:
+  script:
+    - hugo
+  except:
+    - master
+
+pages:
+  script:
+    - hugo
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - public
+  only:
+    - master
