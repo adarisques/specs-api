@@ -1,0 +1,174 @@
+// Overrides
+
+// BACKGROUND COLORS
+////////////////////
+$nav-bg: #fff;
+$examples-bg: #f8f9fa;
+$code-bg: transparent;
+$code-annotation-bg: transparent;
+$main-bg: #fff;
+$nav-subitem-bg: transparent;
+$nav-active-bg: transparent;
+$nav-active-parent-bg: transparent;
+$aside-notice-bg: lighten(#ffc107, 25%);
+$aside-warning-bg: lighten(#dc3545, 25%);
+$aside-success-bg: lighten(#28a745, 25%);
+
+// TEXT COLORS
+////////////////////
+$main-text: #212529; // main content text color
+$nav-text: #794ca6;
+$nav-active-text: navy;
+$nav-active-parent-text: $nav-text;
+
+// SIZES
+////////////////////
+$examples-width: 40% !default; // portion of the screen taken up by code examples
+
+// FONTS
+////////////////////
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Work+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+$font-default-size: 1rem;
+$font-default-family: 'Work Sans', sans-serif;
+$font-default-weight: 500;
+
+%header-font {
+    font-family: 'Lexend Deca', sans-serif !important;
+}
+
+body {
+    font-size: .875rem !important;
+}
+
+.toc-wrapper {
+    background: linear-gradient(to right, rgb(216, 204, 229), rgb(235, 229, 242));
+    font-weight: 500 !important;
+
+    .logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    >.search {
+        &::before {
+            top: 20px !important;
+            left: 22px !important;
+        }
+        input {
+            @extend %header-font;
+            height: calc(1.5em + 0.75rem + 2px);
+            padding: .375rem .75rem .375rem calc(.75rem + 10px) !important;
+            font-size: 1rem !important;
+            font-weight: 400 !important;
+            line-height: 1.5 !important;
+            color: #495057 !important;
+            background-clip: padding-box;
+            border: 1px solid #ced4da !important;
+            border-radius: .25rem !important;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+    }
+    
+    .toc-footer li {
+        font-size: 0.85em !important;
+        color: #000 !important;
+    }
+
+    .toc-link {
+        font-weight: 500 !important;
+    }
+
+    .toc-link.active {
+        font-weight: 800 !important;
+    }
+
+    .toc-link:hover, .toc-link:focus {
+        color: $nav-active-text;
+    }
+
+    .toc-h1 {
+        font-size: 1rem !important;
+    }
+    .toc-h2 {
+        font-size: .875rem !important;
+    }
+}
+
+.page-wrapper .dark-box {
+    //background: linear-gradient(to left,  rgb(216, 204, 229), rgb(235, 229, 242));
+    z-index: 1;
+}
+
+.content {
+    p {
+        margin-bottom: 1rem;
+    }
+    h1, h2 {
+        z-index: 2;
+        //background-color: $main-bg;
+        margin-right: 0 !important;
+    }
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    h2 {
+        margin-top: 2.5rem !important;
+        font-size: 2rem !important;
+    }
+    .page-title {
+        margin-right: 0 !important;
+        padding: 1.25rem 28px !important;
+        font-size: 1rem !important;
+        font-weight: 500;
+        color: #fff !important;
+        background: linear-gradient(to right, #1a0034, #27004e, navy);
+    }
+
+    code, var {
+        border-radius: .4rem !important;
+        padding: .2rem .4rem !important;
+        background-color: rgba(121,122,123,0.1) !important;
+    }
+
+    span>code:not(:first-child), span>var:not(:first-child) {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        padding-left: 0 !important;
+    }
+    span>code:not(:last-child), span>var:not(:last-child) {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    pre>code {
+        background-color: transparent !important;
+        padding: 0 !important;
+    }
+
+    code {
+        color: #5a4d23;
+    }
+
+    var {
+        @extend %code-font;
+        font-style: normal;
+        color: #e83e8c;
+
+        &:before { content: "⟨"; }
+        &:after { content: "⟩"; }
+    }
+}
+
+blockquote {
+    color: #212529 !important;
+    &>p {
+        color: #1a0034 !important;
+    }
+}
+
+.app-name {
+    font-family: 'Lexend Deca', sans-serif;
+    letter-spacing: .25ex;
+}

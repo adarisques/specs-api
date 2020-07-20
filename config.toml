@@ -1,0 +1,44 @@
+title = "API AdA Risques"
+languageCode = "fr-fr"
+baseurl = "https://api-doc.ada-risques.fr/"
+
+theme = "docuapi"
+
+disableKinds = ["taxonomyTerm"]
+removePathAccents = true
+
+# Code higlighting settings
+pygmentsCodefences = true
+pygmentsCodeFencesGuesSsyntax = false
+pygmentsOptions = ""
+pygmentsStyle = "tango"
+pygmentsUseClasses = false
+
+defaultContentLanguage = "fr"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      autoHeadingIDType = "github-ascii"
+    [markup.goldmark.renderer]
+        unsafe = true
+
+[module]
+[module.hugoVersion]
+[[module.imports]]
+# We include the theme by "../.." above, but we need one module import for Hugo to detect us as a Hugo Module.
+path="github.com/bep/empty-hugo-module"
+
+[params]
+search = true
+
+# Configure the language example tabs.
+
+# Left sidebar footer items. Use HTMl or Markdown.
+toc_footers = [ 
+  "Généré avec [Hugo](https://gohugo.io).",
+  "Thème [DocuAPI](https://github.com/bep/docuapi) par [bep](https://github.com/bep)."
+]
+[languages.fr.blackfriday]
+angledQuotes = false
+hrefTargetBlank = true
